@@ -11,11 +11,11 @@ export class DisplaySystem implements System {
     }
 
     /** call the renderer to display the component **/
-    render(component: DisplayComponent) {
+    public do(component: DisplayComponent): void {
         this.renderer.render(component);
     }
 
-    getName(): string {
+    public getName(): string {
         return 'display';
     }
 }

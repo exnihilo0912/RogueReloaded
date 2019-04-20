@@ -18,7 +18,7 @@ export class RogueReloaded {
         //this.game.addSystem(); add physics
         const player = new Player();
         player.addComponent(new HPComponent(100));
-        player.addComponent(new DisplayComponent({character: '@'}));
+        player.addComponent(new DisplayComponent({ html: { x: 0, y: 0, character: '@' } }));
 
         this.game.addEntity(player);
     }

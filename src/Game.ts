@@ -42,10 +42,12 @@ export class Game {
     public play(): void {
         console.log('Play !');
         for(let i = 0; i < 1000; i++) {
-            this.systems.forEach( (e) => {
-                this.entities.forEach((el) => {
-                    if (el.hasComponent(e.getName()))
-                        console.log(`do something  with ${e.getName()}!`);
+            this.systems.forEach( (system) => {
+                this.entities.forEach((entity) => {
+                    if (entity.hasComponent(system.getName())) {
+                        console.log(`do something  with ${system.getName()}!`);
+                        system.do(entity.getComponent(system.getName())); //TODO shorten this
+                    }
                 })
             });
         }
